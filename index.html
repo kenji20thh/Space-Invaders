@@ -8,28 +8,40 @@
 </head>
 <body>
     <div id="game-container">
-        <div id="scoreboard">
-            <span id="score">Score: 0</span>
-            <span id="lives">Lives: 3</span>
+        <nav id="scoreboard">
+            <div class="score-item">
+                <span>Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="score-item">
+                <span>Lives:</span>
+                <span id="lives">3</span>
+            </div>
+            <div class="score-item">
+                <span>Time:</span>
+                <span id="timer">00:00</span>
+            </div>
+        </nav>
+        
+        <div id="pause-menu" class="hidden">
+            <div class="pause-content">
+                <h2>Paused</h2>
+                <button id="continue-btn">Continue</button>
+                <button id="restart-btn">Restart</button>
+            </div>
         </div>
+
         <div id="game-area">
-            <!-- Enemies -->
-            <div id="enemies"></div>
-
-            <!-- Bricks protecting the player -->
-            <div class="brick" style="left: 20%;"></div>
-            <div class="brick" style="left: 40%;"></div>
-            <div class="brick" style="left: 60%;"></div>
-            <div class="brick" style="left: 80%;"></div>
-
-            <!-- Player -->
+            <div id="enemy-container">
+                <!-- Enemies will be dynamically created here -->
+            </div>
+            <div id="player-protection">
+                <!-- Protective bricks -->
+            </div>
             <div id="player"></div>
         </div>
-        <div id="pause-menu" class="hidden">
-            <button id="continue">Continue</button>
-            <button id="restart">Restart</button>
-        </div>
     </div>
-    <script src="game.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,121 +1,104 @@
-/* General reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: black;
-    color: white;
-}
-
-/* Game Container */
-#game-container {
-    position: relative;
-    width: 800px;
-    height: 600px;
-    background-color: #111;
-    border: 2px solid white;
+    background-color: #000;
+    color: #fff;
     overflow: hidden;
 }
 
-/* Scoreboard */
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
 #scoreboard {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 }
 
-#lives {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
+.score-item {
+    font-size: 1.2rem;
 }
 
-/* Game Area */
 #game-area {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 50px);
+    margin-top: 50px;
 }
 
-/* Player */
-#player {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: green;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Bricks */
-.brick {
-    position: absolute;
-    width: 80px;
-    height: 20px;
-    background-color: red;
-    bottom: 80px;
-}
-
-/* Enemies */
-#enemies {
-    position: absolute;
-    width: 100%;
-    top: 50px;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 10px;
+#enemy-container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
 }
 
 .enemy {
     width: 40px;
     height: 40px;
-}
-
-/* Different enemy styles */
-.enemy1 { background-color: yellow; }
-.enemy2 { background-color: red; }
-.enemy3 { background-color: cyan; }
-.enemy4 { background-color: magenta; }
-
-/* Pause Menu */
-#pause-menu {
+    background-color: green;
     position: absolute;
-    top: 50%;
+}
+
+.enemy-type-1 { background-color: green; }
+.enemy-type-2 { background-color: blue; }
+.enemy-type-3 { background-color: red; }
+.enemy-type-4 { background-color: purple; }
+
+#player {
+    width: 60px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    bottom: 50px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateX(-50%);
+}
+
+.brick {
+    width: 60px;
+    height: 30px;
+    background-color: gray;
+    position: absolute;
+    bottom: 100px;
+}
+
+#pause-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.pause-content {
+    background-color: #333;
     padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    border-radius: 5px;
-    display: none;
-}
-
-button {
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-button:hover {
-    background-color: #666;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
+}
+
+.projectile {
+    width: 5px;
+    height: 15px;
+    background-color: yellow;
+    position: absolute;
 }
