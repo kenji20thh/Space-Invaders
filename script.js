@@ -16,7 +16,7 @@ class SpaceInvaders {
         this.isPaused = false;
         
         // Player properties
-        this.playerSpeed = 5;
+        this.playerSpeed = 20;
         this.playerX = window.innerWidth / 2;
         
         // Enemy properties
